@@ -1,14 +1,13 @@
 Przygotowanie środowiska:
-
 Bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-Migracja bazy danych:
 
+Migracja bazy danych:
 Bash
 python manage.py migrate
-Uruchomienie serwera:
 
+Uruchomienie serwera:
 Bash
 python manage.py runserver
