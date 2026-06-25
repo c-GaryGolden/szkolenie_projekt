@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}System Szkoleniowy{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+
+    <nav class="container">
+        <ul>
+            <li><strong><a href="/offer/kategorie/" class="secondary">🎓 Akademia</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="/offer/kategorie/">Oferta</a></li>
+            <li><a href="/offer/register/">Zapisy</a></li>
+            <li><a href="/offer/issues/">Zgłoś błąd</a></li>
+            <li><a href="/offer/offer-mng/" class="contrast">Panel Mng</a></li>
+            <li><a href="/admin/" target="_blank" class="outline">Admin</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="container">
+        <small>© 2026 System Szkoleniowy - Laboratorium Zaawansowane Aplikacje Internetowe</small>
+    </footer>
+
+</body>
+</html>

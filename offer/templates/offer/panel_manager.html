@@ -1,0 +1,28 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Panel Managera{% endblock %}
+
+{% block content %}
+<article>
+    <header><h2>🛠️ Panel Główny Managera</h2></header>
+    <p>Zarządzaj zasobami szkoleniowymi i kategoriami w systemie.</p>
+    
+    <div class="grid">
+        <a href="/offer/offer-mng/categ-add/" class="button">➕ Dodaj Kategorię</a>
+        <a href="/offer/offer-mng/course-add/" class="button secondary">➕ Dodaj Szkolenie</a>
+    </div>
+    
+    <hr>
+    
+    <div class="grid">
+        <div>
+            <h5>Szybki podgląd struktur:</h5>
+            <ul>
+                <li><a href="/offer/offer-mng/categ-lst/">Lista kategorii (tekst)</a></li>
+                <li><a href="/offer/offer-mng/course-lst/">Lista szkoleń (tekst)</a></li>
+                <li><a href="/offer/issues/problemReport/">Przeglądaj zgłoszone błędy użytkowników</a></li>
+            </ul>
+        </div>
+    </div>
+</article>
+{% endblock %}

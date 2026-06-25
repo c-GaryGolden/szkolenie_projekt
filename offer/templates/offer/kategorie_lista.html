@@ -1,0 +1,32 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Oferta Szkoleniowa{% endblock %}
+
+{% block content %}
+<hgroup>
+    <h1>Oferta Szkoleniowa</h1>
+    <p>Wybierz interesującą Cię kategorię, aby zobaczyć dostępne kursy</p>
+</hgroup>
+
+<div class="grid">
+    {% for kategoria in kategorie %}
+    <article>
+        <header><strong>{{ kategoria.nazwa }}</strong></header>
+        
+        {% if kategoria.kategoria_set.all %}
+            <ul>
+            {% for podkat in kategoria.kategoria_set.all %}
+                <li>
+                    <a href="{% url 'szkolenia_kategoria' podkat.id %}">{{ podkat.nazwa }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p><small class="muted">Brak podkategorii</small></p>
+        {% endif %}
+    </article>
+    {% empty %}
+        <article>Brak danych w bazie. Wejdź do panelu admina i dodaj pierwsze kategorie.</article>
+    {% endfor %}
+</div>
+{% endblock %}

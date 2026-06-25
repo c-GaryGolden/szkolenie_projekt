@@ -1,0 +1,42 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Lista Zgłoszonych Problemów{% endblock %}
+
+{% block content %}
+<hgroup>
+    <h1>⚠️ Zgłoszone Problemy Techniczne</h1>
+    <p>Przegląd zgłoszeń zarejestrowanych w systemie (od najnowszych)</p>
+</hgroup>
+
+<div class="overflow-auto">
+    <table class="striped">
+        <thead>
+            <tr>
+                <th scope="col">Data zgłoszenia</th>
+                <th scope="col">Moduł</th>
+                <th scope="col">Temat</th>
+                <th scope="col">Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for problem in problemy %}
+            <tr>
+                <td>{{ problem.data_zgloszenia|date:"Y-m-d H:i" }}</td>
+                <td><mark>{{ problem.modul }}</mark></td>
+                <td><strong>{{ problem.temat }}</strong></td>
+                <td>
+                    <a href="{% url 'widok_problemu' problem.id %}" class="button text-sm outline font-normal">Szczegóły</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">Brak zgłoszonych problemów w bazie danych.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<br>
+<a href="/offer/issues/" class="button">➕ Zgłoś nowy problem</a>
+{% endblock %}

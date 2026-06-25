@@ -1,0 +1,13 @@
+{% extends 'offer/base.html' %}
+
+{% block content %}
+<article style="max-width: 600px; margin: 20px auto;">
+    <header><h2>{{ tytul }}</h2></header>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="primary">Wyślij formularz</button>
+    </form>
+</article>
+{% endblock %}

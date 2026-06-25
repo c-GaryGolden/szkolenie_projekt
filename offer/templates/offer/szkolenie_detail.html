@@ -1,0 +1,30 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Szkolenia - {{ kategoria.nazwa }}{% endblock %}
+
+{% block content %}
+<hgroup>
+    <h1>Szkolenia w kategorii: {{ kategoria.nazwa }}</h1>
+    <p>Przeglądaj dostępne terminy i zapisz się</p>
+</hgroup>
+
+<ul>
+{% for szk in szkolenia %}
+    <li>
+        <article>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong>{{ szk.tytul }}</strong> (Kod: {{ szk.numer }})
+                    <br><small>Czas trwania: {{ szk.liczba_godzin }}h</small>
+                </div>
+                <div>
+                    <ins>{{ szk.cena }} PLN</ins>
+                </div>
+            </div>
+        </article>
+    </li>
+{% empty %}
+    <li><mark>Brak dostępnych szkoleń w tej kategorii.</mark></li>
+{% endfor %}
+</ul>
+{% endblock %}

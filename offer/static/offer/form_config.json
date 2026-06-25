@@ -1,0 +1,10 @@
+{
+    "rejestracja": {
+        "fields": ["imie", "nazwisko", "email", "telefon"],
+        "required": true
+    },
+    "zgloszenie": {
+        "fields": ["temat", "tresc", "modul"],
+        "required": true
+    }
+}

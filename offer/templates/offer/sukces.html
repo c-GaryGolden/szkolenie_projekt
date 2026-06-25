@@ -1,0 +1,15 @@
+{% extends 'offer/base.html' %}
+
+{% block content %}
+<article style="max-width: 600px; margin: 40px auto; text-align: center;">
+    <header>
+        <h2 style="color: #2ecc71;">✔ Operacja zakończona sukcesem!</h2>
+    </header>
+    
+    <p>{{ message }}</p>
+    
+    <footer>
+        <a href="{% url 'kategorie_lista' %}" class="button">Powrót do strony głównej</a>
+    </footer>
+</article>
+{% endblock %}

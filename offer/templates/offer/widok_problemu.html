@@ -1,0 +1,24 @@
+{% extends 'offer/base.html' %}
+
+{% block title %}Zgłoszenie #{{ problem.id }}{% endblock %}
+
+{% block content %}
+<article>
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Zgłoszenie: {{ problem.temat }}</h2>
+        <span class="badge"><mark>Status: Nowe</mark></span>
+    </header>
+    
+    <p><strong>Moduł systemu:</strong> {{ problem.modul }}</p>
+    <p><strong>Data wysłania:</strong> {{ problem.data_zgloszenia|date:"Y-m-d H:i" }}</p>
+    <hr>
+    <p><strong>Treść zgłoszenia:</strong></p>
+    <blockquote>
+        {{ problem.tresc }}
+    </blockquote>
+    
+    <footer>
+        <a href="/offer/issues/problemReport/" class="button secondary">⬅ Powrót do listy</a>
+    </footer>
+</article>
+{% endblock %}
